@@ -1,9 +1,9 @@
-numpy
+numpy == 1.26.4
 seaborn == 0.12.1
 pandas == 1.5.1
-plotly
-streamlit == 1.20.0
+plotly == 6.5.0
+streamlit == 1.53.0
 matplotlib == 3.7.1
-folium
+folium == 0.20.0
 numerize == 0.12
-pillow == 9.4.0
+pillow == 12.0.0
