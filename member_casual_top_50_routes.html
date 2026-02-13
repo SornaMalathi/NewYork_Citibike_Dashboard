@@ -1,0 +1,2216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_2f93411b27138e202b17f9a497b3ecc9 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="
+    position: fixed;
+    bottom: 50px;
+    left: 50px;
+    width: 160px;
+    background-color: white;
+    border: 2px solid grey;
+    z-index: 9999;
+    font-size: 14px;
+    padding: 10px;
+">
+<b>Route Type</b><br>
+<span style="color:blue;">&#9632;</span> Member Routes<br>
+<span style="color:green;">&#9632;</span> Casual Routes
+</div>
+    
+            <div class="folium-map" id="map_2f93411b27138e202b17f9a497b3ecc9" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_2f93411b27138e202b17f9a497b3ecc9 = L.map(
+                "map_2f93411b27138e202b17f9a497b3ecc9",
+                {
+                    center: [40.7456722640635, -73.98043336736826],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_1482442c72c84b3cfc688578c22013e4 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_1482442c72c84b3cfc688578c22013e4.addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            var poly_line_51c0a47c0d57af220049847c95723934 = L.polyline(
+                [[40.765914203297626, -73.97634838715643], [40.76590934377182, -73.97634153208837]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 7.0}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_51c0a47c0d57af220049847c95723934.bindTooltip(
+                `<div>
+                     Central Park S & 6 Ave → Central Park S & 6 Ave (casual): 9881 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_56b95bd9b920f42ce93d0e3c264472da = L.polyline(
+                [[40.7667286662188, -73.9790927915777], [40.76674057662898, -73.97906899474037]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 5.6286813075599635}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_56b95bd9b920f42ce93d0e3c264472da.bindTooltip(
+                `<div>
+                     7 Ave & Central Park South → 7 Ave & Central Park South (casual): 7171 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_c4eab9966a979c10dbec7be47810f51b = L.polyline(
+                [[40.7572803781628, -73.95359572575676], [40.757284, -73.9536]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 5.241068717741119}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_c4eab9966a979c10dbec7be47810f51b.bindTooltip(
+                `<div>
+                     Roosevelt Island Tramway → Roosevelt Island Tramway (casual): 6405 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_fc50b00adfba3caf196d1c4c77bbeac8 = L.polyline(
+                [[40.764388833771754, -73.97373272242059], [40.76439709664649, -73.97371466173726]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 5.036129946361704}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_fc50b00adfba3caf196d1c4c77bbeac8.bindTooltip(
+                `<div>
+                     Grand Army Plaza & Central Park S → Grand Army Plaza & Central Park S (casual): 6000 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_24e2f36f36f6413edc4faa88f0ddff1c = L.polyline(
+                [[40.741739232082594, -73.9941449042579], [40.74549729815233, -74.00197138759803]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 5.011334885133083}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_24e2f36f36f6413edc4faa88f0ddff1c.bindTooltip(
+                `<div>
+                     W 21 St & 6 Ave → 9 Ave & W 22 St (member): 5951 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_dee961af44711e97106d816db6409c8a = L.polyline(
+                [[40.76123307063166, -73.96092334910165], [40.765005249624245, -73.95818491013527]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 4.7699625543973285}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_dee961af44711e97106d816db6409c8a.bindTooltip(
+                `<div>
+                     1 Ave & E 62 St → 1 Ave & E 68 St (member): 5474 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_29b80779b477a2fd4354aabc9fe729ea = L.polyline(
+                [[40.69231949810377, -74.01486477208839], [40.692316636685604, -74.01486577435278]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 4.703673717235098}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_29b80779b477a2fd4354aabc9fe729ea.bindTooltip(
+                `<div>
+                     Soissons Landing → Soissons Landing (casual): 5343 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_3b7a1387c6fb5a3c150a4b36e5cbb9c0 = L.polyline(
+                [[40.71722596776375, -73.98801845596779], [40.714211, -73.981095]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 4.3641331849003135}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_3b7a1387c6fb5a3c150a4b36e5cbb9c0.bindTooltip(
+                `<div>
+                     Norfolk St & Broome St → Henry St & Grand St (member): 4672 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_7919c8a753b3307585ec5e1c81d3ac9c = L.polyline(
+                [[40.75514503084577, -73.98661063822523], [40.75513557514144, -73.98658031617381]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 4.209290557635867}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_7919c8a753b3307585ec5e1c81d3ac9c.bindTooltip(
+                `<div>
+                     Broadway & W 41 St → Broadway & W 41 St (member): 4366 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_9610e46e77882367101f62f8d4f64106 = L.polyline(
+                [[40.72019703557909, -74.01030457944282], [40.712219588270116, -74.01047229187004]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 4.130857200688189}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_9610e46e77882367101f62f8d4f64106.bindTooltip(
+                `<div>
+                     North Moore St & Greenwich St → Vesey St & Church St (member): 4211 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_8e0050564d27071ce372fd3e56a3207a = L.polyline(
+                [[40.68706660035403, -74.01675370950535], [40.68706582009219, -74.01675586698882]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 4.106568161117296}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_8e0050564d27071ce372fd3e56a3207a.bindTooltip(
+                `<div>
+                     Yankee Ferry Terminal → Yankee Ferry Terminal (casual): 4163 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_12b8a0c9c0f535aa424752519b53b980 = L.polyline(
+                [[40.772819252520414, -73.96686214377056], [40.77282816266591, -73.96685277035401]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 4.088857403096853}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_12b8a0c9c0f535aa424752519b53b980.bindTooltip(
+                `<div>
+                     5 Ave & E 72 St → 5 Ave & E 72 St (casual): 4128 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_d1f01f7681a6e96edf88c9d04326013f = L.polyline(
+                [[40.7142182668897, -73.98110238597476], [40.71722739772461, -73.98802084091015]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 4.085821273150491}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_d1f01f7681a6e96edf88c9d04326013f.bindTooltip(
+                `<div>
+                     Henry St & Grand St → Norfolk St & Broome St (member): 4122 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_1afe05c24c704b9139a3dfdf74c5cee8 = L.polyline(
+                [[40.741739232082594, -73.9941449042579], [40.746919593351244, -74.00451887106259]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3.971966400161927}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_1afe05c24c704b9139a3dfdf74c5cee8.bindTooltip(
+                `<div>
+                     W 21 St & 6 Ave → W 22 St & 10 Ave (member): 3897 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_f33bc4d074d25b4a00f9c8ed1be60bc8 = L.polyline(
+                [[40.74690997324154, -74.00448367241407], [40.744751477409366, -73.99915362205091]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3.942111122356037}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_f33bc4d074d25b4a00f9c8ed1be60bc8.bindTooltip(
+                `<div>
+                     W 22 St & 10 Ave → W 22 St & 8 Ave (member): 3838 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_5d883035294fca535d429de06f1c8d7a = L.polyline(
+                [[40.766931937470595, -73.98171698349141], [40.766953167041144, -73.98169332425634]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3.878352393482441}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_5d883035294fca535d429de06f1c8d7a.bindTooltip(
+                `<div>
+                     Broadway & W 58 St → Broadway & W 58 St (casual): 3712 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_072ed7ac6bfa59bb4f63663cd239872d = L.polyline(
+                [[40.775798191307686, -73.9761881770108], [40.77579377652637, -73.97620574735333]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3.8439429207570086}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_072ed7ac6bfa59bb4f63663cd239872d.bindTooltip(
+                `<div>
+                     Central Park West & W 72 St → Central Park West & W 72 St (casual): 3644 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_d347dbdc921dcbcf60bec287af8ae4e8 = L.polyline(
+                [[40.76665410953318, -73.95348228124402], [40.7687620292114, -73.95840793868649]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3.8221839894747496}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_d347dbdc921dcbcf60bec287af8ae4e8.bindTooltip(
+                `<div>
+                     E 72 St & York Ave → 2 Ave & E 72 St (member): 3601 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_d2f2d4a6f4454290e335114c9d63882c = L.polyline(
+                [[40.835829926721885, -73.91371887117977], [40.83579, -73.913741]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3.8034611881388525}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_d2f2d4a6f4454290e335114c9d63882c.bindTooltip(
+                `<div>
+                     Grant Ave & E 169 St → Grant Ave & E 169 St (member): 3564 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_7597a9ad7746027d8265dbfd6a6bcde0 = L.polyline(
+                [[40.76500969788627, -73.95817465175672], [40.77140425937994, -73.95351660095393]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3.7801841918834125}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_7597a9ad7746027d8265dbfd6a6bcde0.bindTooltip(
+                `<div>
+                     1 Ave & E 68 St → 1 Ave & E 78 St (member): 3518 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_a4f42d532d70aa4ff06c18ec9810e448 = L.polyline(
+                [[40.77965185623535, -73.98092017243846], [40.782939099405134, -73.9786517017846]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3.7680396720979656}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_a4f42d532d70aa4ff06c18ec9810e448.bindTooltip(
+                `<div>
+                     Amsterdam Ave & W 73 St → Amsterdam Ave & W 79 St (member): 3494 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_0290257eff69ec12ceec7fae3f1e2129 = L.polyline(
+                [[40.7713989042826, -73.95351140697394], [40.77314235895645, -73.95856158121747]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3.76399149883615}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_0290257eff69ec12ceec7fae3f1e2129.bindTooltip(
+                `<div>
+                     1 Ave & E 78 St → E 77 St & 3 Ave (member): 3486 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_c016b9f9c4ab7c3457aff670146e274c = L.polyline(
+                [[40.7174497381981, -73.95851496271732], [40.71285887129729, -73.96590294059877]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3.738184394292076}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_c016b9f9c4ab7c3457aff670146e274c.bindTooltip(
+                `<div>
+                     N 6 St & Bedford Ave → S 4 St & Wythe Ave (member): 3435 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_b1e347264d3e96217ea63aaa134e1352 = L.polyline(
+                [[40.7127340762083, -74.0046077048762], [40.71273267792072, -74.0046072841876]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3.735148264345714}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_b1e347264d3e96217ea63aaa134e1352.bindTooltip(
+                `<div>
+                     Centre St & Chambers St → Centre St & Chambers St (casual): 3429 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_4304b104079856836ac676d4fad336b8 = L.polyline(
+                [[40.71560216469482, -73.9870297744958], [40.714211, -73.981095]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3.7285699827952636}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_4304b104079856836ac676d4fad336b8.bindTooltip(
+                `<div>
+                     Clinton St & Grand St → Henry St & Grand St (member): 3416 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_effba2606582320e5f65db1b807982f8 = L.polyline(
+                [[40.7122251843652, -74.01048096014686], [40.720195213116256, -74.0103006384265]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3.7214856795870865}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_effba2606582320e5f65db1b807982f8.bindTooltip(
+                `<div>
+                     Vesey St & Church St → North Moore St & Greenwich St (member): 3402 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_c7ab6b6b37b65cf3e866e5004cbea4fb = L.polyline(
+                [[40.7713989042826, -73.95351140697394], [40.7687620292114, -73.95840793868649]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3.7118712680902743}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_c7ab6b6b37b65cf3e866e5004cbea4fb.bindTooltip(
+                `<div>
+                     1 Ave & E 78 St → 2 Ave & E 72 St (member): 3383 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_9fef0650bf22146cf8e8e044d3c9eb35 = L.polyline(
+                [[40.78234103761965, -73.95986566653949], [40.78232263022697, -73.9598751005778]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3.7083291164861856}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_9fef0650bf22146cf8e8e044d3c9eb35.bindTooltip(
+                `<div>
+                     5 Ave & E 87 St → 5 Ave & E 87 St (casual): 3376 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_396da8ed6f87145fc59975e1470752c6 = L.polyline(
+                [[40.765914203297626, -73.97634838715643], [40.78232263022697, -73.9598751005778]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3.6582329723712173}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_396da8ed6f87145fc59975e1470752c6.bindTooltip(
+                `<div>
+                     Central Park S & 6 Ave → 5 Ave & E 87 St (casual): 3277 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_26e9d4e737e793a3d514670e4430c971 = L.polyline(
+                [[40.720877705640056, -73.98085792411207], [40.72335597974499, -73.98864984616405]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3.6551968424248558}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_26e9d4e737e793a3d514670e4430c971.bindTooltip(
+                `<div>
+                     E 2 St & Avenue C → E 1 St & 1 Ave (member): 3271 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_378a1bca1e18a7b7fa33a5527d3035fb = L.polyline(
+                [[40.73556175156206, -73.95284173683179], [40.74232743802212, -73.95411748779738]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3.6278716729076006}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_378a1bca1e18a7b7fa33a5527d3035fb.bindTooltip(
+                `<div>
+                     McGuinness Blvd & Eagle St → Vernon Blvd & 50 Ave (member): 3217 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_519ca5bd626ec1b0664881ad7467b45e = L.polyline(
+                [[40.71756295391197, -74.01321286920646], [40.72771407564085, -74.01129574309394]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3.6071247849407957}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_519ca5bd626ec1b0664881ad7467b45e.bindTooltip(
+                `<div>
+                     West St & Chambers St → Pier 40 - Hudson River Park (member): 3176 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_28b194c971ca91cb5142cd9600b95c05 = L.polyline(
+                [[40.7506487247634, -74.00178079541075], [40.74734824895907, -73.99723551204022]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3.5570286408258274}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_28b194c971ca91cb5142cd9600b95c05.bindTooltip(
+                `<div>
+                     10 Ave & W 28 St → W 26 St & 8 Ave (member): 3077 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_ef945e8fd2e112d042758aec4c29f68e = L.polyline(
+                [[40.74690997324154, -74.00448367241407], [40.74173969145501, -73.99415556206517]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3.5383058394899303}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_ef945e8fd2e112d042758aec4c29f68e.bindTooltip(
+                `<div>
+                     W 22 St & 10 Ave → W 21 St & 6 Ave (member): 3040 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_a41bff848085b8f1c0355ecb2ffe60c4 = L.polyline(
+                [[40.68706660035403, -74.01675370950535], [40.692316636685604, -74.01486577435278]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3.5044023884222244}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_a41bff848085b8f1c0355ecb2ffe60c4.bindTooltip(
+                `<div>
+                     Yankee Ferry Terminal → Soissons Landing (casual): 2973 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_c73e88f57acbe4c90a13080c8e1d0401 = L.polyline(
+                [[40.76031696923643, -73.998827933908], [40.75594160072956, -74.00211629214911]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3.476065175589515}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_c73e88f57acbe4c90a13080c8e1d0401.bindTooltip(
+                `<div>
+                     11 Ave & W 41 St → W 34 St & 11 Ave (member): 2917 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_411e38de4ed4a07d6205f35202a6d484 = L.polyline(
+                [[40.747300017906895, -73.954504504587], [40.74232743802212, -73.95411748779738]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3.4755591539317883}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_411e38de4ed4a07d6205f35202a6d484.bindTooltip(
+                `<div>
+                     46 Ave & 5 St → Vernon Blvd & 50 Ave (member): 2916 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_d58a831bd52a882fe4f63c9a9f8a2fc6 = L.polyline(
+                [[40.760877556708884, -74.00278293133859], [40.7608750193633, -74.00277669018728]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3.4755591539317883}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_d58a831bd52a882fe4f63c9a9f8a2fc6.bindTooltip(
+                `<div>
+                     12 Ave & W 40 St → 12 Ave & W 40 St (casual): 2916 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_f5b4554de9f9c50c040d91e4394b7cc9 = L.polyline(
+                [[40.714278766115186, -73.9899016748226], [40.714211, -73.981095]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3.4704989373545185}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_f5b4554de9f9c50c040d91e4394b7cc9.bindTooltip(
+                `<div>
+                     Canal St & Rutgers St → Henry St & Grand St (member): 2906 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_30b33f51988b7e77aec7c0e3ccabb4f1 = L.polyline(
+                [[40.71287397574857, -73.96591838715482], [40.71745169169028, -73.95850938787352]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3.4679688290658843}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_30b33f51988b7e77aec7c0e3ccabb4f1.bindTooltip(
+                `<div>
+                     S 4 St & Wythe Ave → N 6 St & Bedford Ave (member): 2901 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_bba0cc5fa08badcbbf7faa3999258118 = L.polyline(
+                [[40.7575973488895, -73.99095945477632], [40.76030096019237, -73.99884221894197]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3.4634146341463414}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_bba0cc5fa08badcbbf7faa3999258118.bindTooltip(
+                `<div>
+                     W 42 St & 8 Ave → 11 Ave & W 41 St (member): 2892 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_99042650250f9b7796d905b0c3727f89 = L.polyline(
+                [[40.76123307063166, -73.96092334910165], [40.77140425937994, -73.95351660095393]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3.460884525857707}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_99042650250f9b7796d905b0c3727f89.bindTooltip(
+                `<div>
+                     1 Ave & E 62 St → 1 Ave & E 78 St (member): 2887 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_905bc886aba2c744d4a150e4cae167ea = L.polyline(
+                [[40.742339703243786, -73.9541138217546], [40.73555, -73.95284]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3.4173666632931887}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_905bc886aba2c744d4a150e4cae167ea.bindTooltip(
+                `<div>
+                     Vernon Blvd & 50 Ave → McGuinness Blvd & Eagle St (member): 2801 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_fc71b36dd1c69f829b3afc6f33ca0d32 = L.polyline(
+                [[40.73565041623425, -73.95866053340296], [40.74232743802212, -73.95411748779738]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3.4173666632931887}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_fc71b36dd1c69f829b3afc6f33ca0d32.bindTooltip(
+                `<div>
+                     Franklin St & Dupont St → Vernon Blvd & 50 Ave (member): 2801 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_95c165210c90a2178dc23be0751a7fdb = L.polyline(
+                [[40.7142182668897, -73.98110238597476], [40.71427487056234, -73.98990024891857]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3.415848598320008}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_95c165210c90a2178dc23be0751a7fdb.bindTooltip(
+                `<div>
+                     Henry St & Grand St → Canal St & Rutgers St (member): 2798 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_3152ed7b937e6379b455c8350af033d1 = L.polyline(
+                [[40.7455005178809, -74.00197069429129], [40.74173969145501, -73.99415556206517]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3.4153425766622814}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_3152ed7b937e6379b455c8350af033d1.bindTooltip(
+                `<div>
+                     9 Ave & W 22 St → W 21 St & 6 Ave (member): 2797 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_d7659b54f26d0a743a5a67e2d6a1264e = L.polyline(
+                [[40.773395704341524, -73.9778308178665], [40.7734066104155, -73.97782540906373]],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3.4097763384272843}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_d7659b54f26d0a743a5a67e2d6a1264e.bindTooltip(
+                `<div>
+                     Central Park West & W 68 St → Central Park West & W 68 St (casual): 2786 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_92f3753e5affb14380c1d99c4bda1287 = L.polyline(
+                [[40.728821688653476, -74.00859268520463], [40.72771407564085, -74.01129574309394]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3.396113753668657}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_92f3753e5affb14380c1d99c4bda1287.bindTooltip(
+                `<div>
+                     Greenwich St & W Houston St → Pier 40 - Hudson River Park (member): 2759 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_36b57c10f87c99deb2fc4603336e49ea = L.polyline(
+                [[40.741739232082594, -73.9941449042579], [40.739355417925516, -73.99931783083967]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3.3951017103532033}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_36b57c10f87c99deb2fc4603336e49ea.bindTooltip(
+                `<div>
+                     W 21 St & 6 Ave → W 15 St & 7 Ave (member): 2757 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_a94935a7a0a937621913daebfc38c198 = L.polyline(
+                [[40.76392558607287, -73.94773277942029], [40.757284, -73.9536]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.7, "smoothFactor": 1.0, "stroke": true, "weight": 3.346523631211416}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            poly_line_a94935a7a0a937621913daebfc38c198.bindTooltip(
+                `<div>
+                     Motorgate → Roosevelt Island Tramway (member): 2661 trips
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3d9763dfca104d145cbf9ad69ab80285 = L.circleMarker(
+                [40.765914203297626, -73.97634838715643],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_3d9763dfca104d145cbf9ad69ab80285.bindTooltip(
+                `<div>
+                     Central Park S & 6 Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1c0edea3a841a4f59469e16390d5bba3 = L.circleMarker(
+                [40.7667286662188, -73.9790927915777],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_1c0edea3a841a4f59469e16390d5bba3.bindTooltip(
+                `<div>
+                     7 Ave & Central Park South
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bb38ba994c11634bafc47b3e0bddd94a = L.circleMarker(
+                [40.7572803781628, -73.95359572575676],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_bb38ba994c11634bafc47b3e0bddd94a.bindTooltip(
+                `<div>
+                     Roosevelt Island Tramway
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3c29cece231810768035523c7fbffc66 = L.circleMarker(
+                [40.764388833771754, -73.97373272242059],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_3c29cece231810768035523c7fbffc66.bindTooltip(
+                `<div>
+                     Grand Army Plaza & Central Park S
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_38cc4903a6ff0d1364ae04081e911490 = L.circleMarker(
+                [40.741739232082594, -73.9941449042579],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_38cc4903a6ff0d1364ae04081e911490.bindTooltip(
+                `<div>
+                     W 21 St & 6 Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6c9e3891cbe10d2ae2bc8944b891294c = L.circleMarker(
+                [40.76123307063166, -73.96092334910165],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_6c9e3891cbe10d2ae2bc8944b891294c.bindTooltip(
+                `<div>
+                     1 Ave & E 62 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e5a0feab9a33032822cf8ba11818d2c9 = L.circleMarker(
+                [40.69231949810377, -74.01486477208839],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_e5a0feab9a33032822cf8ba11818d2c9.bindTooltip(
+                `<div>
+                     Soissons Landing
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_283db3856afb2c674f28e28a4302f51f = L.circleMarker(
+                [40.71722596776375, -73.98801845596779],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_283db3856afb2c674f28e28a4302f51f.bindTooltip(
+                `<div>
+                     Norfolk St & Broome St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0b81e7053f92f26e3f522ccc056231a5 = L.circleMarker(
+                [40.75514503084577, -73.98661063822523],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_0b81e7053f92f26e3f522ccc056231a5.bindTooltip(
+                `<div>
+                     Broadway & W 41 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_67f6d5837570d8e002e55988cb29c223 = L.circleMarker(
+                [40.72019703557909, -74.01030457944282],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_67f6d5837570d8e002e55988cb29c223.bindTooltip(
+                `<div>
+                     North Moore St & Greenwich St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7c0bc50a3b627c7494532c5559450332 = L.circleMarker(
+                [40.68706660035403, -74.01675370950535],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_7c0bc50a3b627c7494532c5559450332.bindTooltip(
+                `<div>
+                     Yankee Ferry Terminal
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e07567cc5cf349df5d50f9fa10734058 = L.circleMarker(
+                [40.772819252520414, -73.96686214377056],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_e07567cc5cf349df5d50f9fa10734058.bindTooltip(
+                `<div>
+                     5 Ave & E 72 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_77fd849f0b1f6984a7c4185e1e85558b = L.circleMarker(
+                [40.7142182668897, -73.98110238597476],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_77fd849f0b1f6984a7c4185e1e85558b.bindTooltip(
+                `<div>
+                     Henry St & Grand St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cf898ffe0f094dc8f09834b17e10712d = L.circleMarker(
+                [40.74690997324154, -74.00448367241407],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_cf898ffe0f094dc8f09834b17e10712d.bindTooltip(
+                `<div>
+                     W 22 St & 10 Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_57b7fb3ef1619afcf08d8c0324565da0 = L.circleMarker(
+                [40.766931937470595, -73.98171698349141],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_57b7fb3ef1619afcf08d8c0324565da0.bindTooltip(
+                `<div>
+                     Broadway & W 58 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_09263355970a003168cf722ad694b1cd = L.circleMarker(
+                [40.775798191307686, -73.9761881770108],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_09263355970a003168cf722ad694b1cd.bindTooltip(
+                `<div>
+                     Central Park West & W 72 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c192387d0a0947f54b367adece6a5205 = L.circleMarker(
+                [40.76665410953318, -73.95348228124402],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_c192387d0a0947f54b367adece6a5205.bindTooltip(
+                `<div>
+                     E 72 St & York Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_da03769f0db12a1bc112856498284897 = L.circleMarker(
+                [40.835829926721885, -73.91371887117977],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_da03769f0db12a1bc112856498284897.bindTooltip(
+                `<div>
+                     Grant Ave & E 169 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9e4d15d13f0d3e875ede88597613be04 = L.circleMarker(
+                [40.76500969788627, -73.95817465175672],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_9e4d15d13f0d3e875ede88597613be04.bindTooltip(
+                `<div>
+                     1 Ave & E 68 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2a3e56163da53641b821d40022681b3e = L.circleMarker(
+                [40.77965185623535, -73.98092017243846],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_2a3e56163da53641b821d40022681b3e.bindTooltip(
+                `<div>
+                     Amsterdam Ave & W 73 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ffcb518fc82cebfd063aed6a0d6caf86 = L.circleMarker(
+                [40.7713989042826, -73.95351140697394],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_ffcb518fc82cebfd063aed6a0d6caf86.bindTooltip(
+                `<div>
+                     1 Ave & E 78 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0a01f19134960222f579dcb03fc80892 = L.circleMarker(
+                [40.7174497381981, -73.95851496271732],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_0a01f19134960222f579dcb03fc80892.bindTooltip(
+                `<div>
+                     N 6 St & Bedford Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_28e0eb1414e32ed3b56541286cd355fb = L.circleMarker(
+                [40.7127340762083, -74.0046077048762],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_28e0eb1414e32ed3b56541286cd355fb.bindTooltip(
+                `<div>
+                     Centre St & Chambers St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7606ce104cee8de20c25a13e1c66400a = L.circleMarker(
+                [40.71560216469482, -73.9870297744958],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_7606ce104cee8de20c25a13e1c66400a.bindTooltip(
+                `<div>
+                     Clinton St & Grand St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_197f3770f96f4c6b66e67348ef58c9fb = L.circleMarker(
+                [40.7122251843652, -74.01048096014686],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_197f3770f96f4c6b66e67348ef58c9fb.bindTooltip(
+                `<div>
+                     Vesey St & Church St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b27150c14609bdb1e8f47918ccca9f25 = L.circleMarker(
+                [40.78234103761965, -73.95986566653949],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_b27150c14609bdb1e8f47918ccca9f25.bindTooltip(
+                `<div>
+                     5 Ave & E 87 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4286bf85ef9d067150e6ed05be67534e = L.circleMarker(
+                [40.720877705640056, -73.98085792411207],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_4286bf85ef9d067150e6ed05be67534e.bindTooltip(
+                `<div>
+                     E 2 St & Avenue C
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6ac8b6669f43453e0e0520527fe581c3 = L.circleMarker(
+                [40.73556175156206, -73.95284173683179],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_6ac8b6669f43453e0e0520527fe581c3.bindTooltip(
+                `<div>
+                     McGuinness Blvd & Eagle St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_05e436f513c7ea8b6f55729ee6c6f846 = L.circleMarker(
+                [40.71756295391197, -74.01321286920646],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_05e436f513c7ea8b6f55729ee6c6f846.bindTooltip(
+                `<div>
+                     West St & Chambers St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4376e82af8d8bd734905045fab102741 = L.circleMarker(
+                [40.7506487247634, -74.00178079541075],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_4376e82af8d8bd734905045fab102741.bindTooltip(
+                `<div>
+                     10 Ave & W 28 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_939bd0747f745ed5bf68006c388b6a34 = L.circleMarker(
+                [40.76031696923643, -73.998827933908],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_939bd0747f745ed5bf68006c388b6a34.bindTooltip(
+                `<div>
+                     11 Ave & W 41 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b23dd53293fc5079619c3273ed4cf2b7 = L.circleMarker(
+                [40.747300017906895, -73.954504504587],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_b23dd53293fc5079619c3273ed4cf2b7.bindTooltip(
+                `<div>
+                     46 Ave & 5 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2c3286181556eed5a5c17c282e982354 = L.circleMarker(
+                [40.760877556708884, -74.00278293133859],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_2c3286181556eed5a5c17c282e982354.bindTooltip(
+                `<div>
+                     12 Ave & W 40 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_56f8fad6dd73ba76cab8dc5e5f4a4161 = L.circleMarker(
+                [40.714278766115186, -73.9899016748226],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_56f8fad6dd73ba76cab8dc5e5f4a4161.bindTooltip(
+                `<div>
+                     Canal St & Rutgers St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a793fe164f52293effaf9a660ea8ce12 = L.circleMarker(
+                [40.71287397574857, -73.96591838715482],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_a793fe164f52293effaf9a660ea8ce12.bindTooltip(
+                `<div>
+                     S 4 St & Wythe Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_06c9238fd1009c1f21063886707c45b3 = L.circleMarker(
+                [40.7575973488895, -73.99095945477632],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_06c9238fd1009c1f21063886707c45b3.bindTooltip(
+                `<div>
+                     W 42 St & 8 Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e2f4594d0ee22cb5982b061bcb96934d = L.circleMarker(
+                [40.742339703243786, -73.9541138217546],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_e2f4594d0ee22cb5982b061bcb96934d.bindTooltip(
+                `<div>
+                     Vernon Blvd & 50 Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_775db0c5f922abb9e13c546fc55c890e = L.circleMarker(
+                [40.73565041623425, -73.95866053340296],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_775db0c5f922abb9e13c546fc55c890e.bindTooltip(
+                `<div>
+                     Franklin St & Dupont St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a01775927009556b17c868508e92f611 = L.circleMarker(
+                [40.7455005178809, -74.00197069429129],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_a01775927009556b17c868508e92f611.bindTooltip(
+                `<div>
+                     9 Ave & W 22 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5b955934506d85c1829b64dbb8ed19ad = L.circleMarker(
+                [40.773395704341524, -73.9778308178665],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_5b955934506d85c1829b64dbb8ed19ad.bindTooltip(
+                `<div>
+                     Central Park West & W 68 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_435b5de72475649e224333d35774522d = L.circleMarker(
+                [40.728821688653476, -74.00859268520463],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_435b5de72475649e224333d35774522d.bindTooltip(
+                `<div>
+                     Greenwich St & W Houston St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8a3e73f812feadf41f16334f3bcfdab7 = L.circleMarker(
+                [40.76392558607287, -73.94773277942029],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_8a3e73f812feadf41f16334f3bcfdab7.bindTooltip(
+                `<div>
+                     Motorgate
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_40cb4c4ef897e2b96d16048b020f9636 = L.circleMarker(
+                [40.76590934377182, -73.97634153208837],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_40cb4c4ef897e2b96d16048b020f9636.bindTooltip(
+                `<div>
+                     Central Park S & 6 Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8656d4e87162217a1be742243f3aea3d = L.circleMarker(
+                [40.76674057662898, -73.97906899474037],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_8656d4e87162217a1be742243f3aea3d.bindTooltip(
+                `<div>
+                     7 Ave & Central Park South
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f3ad68808b0637ca4fe9f2cfacee6f98 = L.circleMarker(
+                [40.757284, -73.9536],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_f3ad68808b0637ca4fe9f2cfacee6f98.bindTooltip(
+                `<div>
+                     Roosevelt Island Tramway
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fc7ad8b4724272f90c53ec8bb675c7ea = L.circleMarker(
+                [40.76439709664649, -73.97371466173726],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_fc7ad8b4724272f90c53ec8bb675c7ea.bindTooltip(
+                `<div>
+                     Grand Army Plaza & Central Park S
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c2b0884b7f5e573bc12474df23bd116a = L.circleMarker(
+                [40.74549729815233, -74.00197138759803],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_c2b0884b7f5e573bc12474df23bd116a.bindTooltip(
+                `<div>
+                     9 Ave & W 22 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_878b5a0e9625f36291944d25bbbffe85 = L.circleMarker(
+                [40.765005249624245, -73.95818491013527],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_878b5a0e9625f36291944d25bbbffe85.bindTooltip(
+                `<div>
+                     1 Ave & E 68 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ccf1c1e9dfe960b10168a9d17ee926b8 = L.circleMarker(
+                [40.692316636685604, -74.01486577435278],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_ccf1c1e9dfe960b10168a9d17ee926b8.bindTooltip(
+                `<div>
+                     Soissons Landing
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2c0eae6ae4f6ec9876af6d38fb837e02 = L.circleMarker(
+                [40.714211, -73.981095],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_2c0eae6ae4f6ec9876af6d38fb837e02.bindTooltip(
+                `<div>
+                     Henry St & Grand St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1ade1202d033e5092f6e5a9e03c5d24a = L.circleMarker(
+                [40.75513557514144, -73.98658031617381],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_1ade1202d033e5092f6e5a9e03c5d24a.bindTooltip(
+                `<div>
+                     Broadway & W 41 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5c34cb8eb6e8df803b0151c43ae985eb = L.circleMarker(
+                [40.712219588270116, -74.01047229187004],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_5c34cb8eb6e8df803b0151c43ae985eb.bindTooltip(
+                `<div>
+                     Vesey St & Church St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_25ca5d3207cc4256a1bde4da029c334b = L.circleMarker(
+                [40.68706582009219, -74.01675586698882],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_25ca5d3207cc4256a1bde4da029c334b.bindTooltip(
+                `<div>
+                     Yankee Ferry Terminal
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_065aa7ce32cf832efe836530f0732f68 = L.circleMarker(
+                [40.77282816266591, -73.96685277035401],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_065aa7ce32cf832efe836530f0732f68.bindTooltip(
+                `<div>
+                     5 Ave & E 72 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_40e744a6cf1f647953d31bdbbf8244d4 = L.circleMarker(
+                [40.71722739772461, -73.98802084091015],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_40e744a6cf1f647953d31bdbbf8244d4.bindTooltip(
+                `<div>
+                     Norfolk St & Broome St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a6af1c8462185eca27fe63905843a541 = L.circleMarker(
+                [40.746919593351244, -74.00451887106259],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_a6af1c8462185eca27fe63905843a541.bindTooltip(
+                `<div>
+                     W 22 St & 10 Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3c0d41fc9613cda0e60a08304339b8f4 = L.circleMarker(
+                [40.744751477409366, -73.99915362205091],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_3c0d41fc9613cda0e60a08304339b8f4.bindTooltip(
+                `<div>
+                     W 22 St & 8 Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e459bd93334413775a58cf122f6a4334 = L.circleMarker(
+                [40.766953167041144, -73.98169332425634],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_e459bd93334413775a58cf122f6a4334.bindTooltip(
+                `<div>
+                     Broadway & W 58 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a7d39db641cf0030279b02c74b76562f = L.circleMarker(
+                [40.77579377652637, -73.97620574735333],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_a7d39db641cf0030279b02c74b76562f.bindTooltip(
+                `<div>
+                     Central Park West & W 72 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ac613ad1ca6bcd4c79d171277b004e5f = L.circleMarker(
+                [40.7687620292114, -73.95840793868649],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_ac613ad1ca6bcd4c79d171277b004e5f.bindTooltip(
+                `<div>
+                     2 Ave & E 72 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0737f2319e09cca94e45f92cd0fa60c0 = L.circleMarker(
+                [40.83579, -73.913741],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_0737f2319e09cca94e45f92cd0fa60c0.bindTooltip(
+                `<div>
+                     Grant Ave & E 169 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_401c21ef174ea12a0ee55cf9e0e32773 = L.circleMarker(
+                [40.77140425937994, -73.95351660095393],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_401c21ef174ea12a0ee55cf9e0e32773.bindTooltip(
+                `<div>
+                     1 Ave & E 78 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2455d3ccc170afa71d1ef6da53434a66 = L.circleMarker(
+                [40.782939099405134, -73.9786517017846],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_2455d3ccc170afa71d1ef6da53434a66.bindTooltip(
+                `<div>
+                     Amsterdam Ave & W 79 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_998cb559de30ef1ebb54c105fd771d1c = L.circleMarker(
+                [40.77314235895645, -73.95856158121747],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_998cb559de30ef1ebb54c105fd771d1c.bindTooltip(
+                `<div>
+                     E 77 St & 3 Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_041e7695aaf75e945135fe9a3d9d31a9 = L.circleMarker(
+                [40.71285887129729, -73.96590294059877],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_041e7695aaf75e945135fe9a3d9d31a9.bindTooltip(
+                `<div>
+                     S 4 St & Wythe Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7437e7f40b1a59cf6cf4c23ccc531c40 = L.circleMarker(
+                [40.71273267792072, -74.0046072841876],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_7437e7f40b1a59cf6cf4c23ccc531c40.bindTooltip(
+                `<div>
+                     Centre St & Chambers St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7a41fd6c0a1fa94150be7c4d75579ab5 = L.circleMarker(
+                [40.720195213116256, -74.0103006384265],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_7a41fd6c0a1fa94150be7c4d75579ab5.bindTooltip(
+                `<div>
+                     North Moore St & Greenwich St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_091023c9341e50370eaee7025b18f4c3 = L.circleMarker(
+                [40.78232263022697, -73.9598751005778],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_091023c9341e50370eaee7025b18f4c3.bindTooltip(
+                `<div>
+                     5 Ave & E 87 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5b218bfe519b46d2ff5771a687f32356 = L.circleMarker(
+                [40.72335597974499, -73.98864984616405],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_5b218bfe519b46d2ff5771a687f32356.bindTooltip(
+                `<div>
+                     E 1 St & 1 Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d809979d71f782a32e9407eee40889bf = L.circleMarker(
+                [40.74232743802212, -73.95411748779738],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_d809979d71f782a32e9407eee40889bf.bindTooltip(
+                `<div>
+                     Vernon Blvd & 50 Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c839ad88378b703c2843c1d03ea082b1 = L.circleMarker(
+                [40.72771407564085, -74.01129574309394],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_c839ad88378b703c2843c1d03ea082b1.bindTooltip(
+                `<div>
+                     Pier 40 - Hudson River Park
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2fc6e1af6828c3890ae03a199fafdfcd = L.circleMarker(
+                [40.74734824895907, -73.99723551204022],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_2fc6e1af6828c3890ae03a199fafdfcd.bindTooltip(
+                `<div>
+                     W 26 St & 8 Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c361834f27ee5db6fc114163bf5c5708 = L.circleMarker(
+                [40.74173969145501, -73.99415556206517],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_c361834f27ee5db6fc114163bf5c5708.bindTooltip(
+                `<div>
+                     W 21 St & 6 Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_edb9a2cb52f242ed0c6471db9c22f0cf = L.circleMarker(
+                [40.75594160072956, -74.00211629214911],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_edb9a2cb52f242ed0c6471db9c22f0cf.bindTooltip(
+                `<div>
+                     W 34 St & 11 Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d018735eeee1812c850d1127594419ee = L.circleMarker(
+                [40.7608750193633, -74.00277669018728],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_d018735eeee1812c850d1127594419ee.bindTooltip(
+                `<div>
+                     12 Ave & W 40 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b3749ab7301dd3694592373b548ed193 = L.circleMarker(
+                [40.71745169169028, -73.95850938787352],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_b3749ab7301dd3694592373b548ed193.bindTooltip(
+                `<div>
+                     N 6 St & Bedford Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_28dd10a05a4fda3429b395f347373078 = L.circleMarker(
+                [40.76030096019237, -73.99884221894197],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_28dd10a05a4fda3429b395f347373078.bindTooltip(
+                `<div>
+                     11 Ave & W 41 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a7c94cb7f26e4be8d10214455df8dc32 = L.circleMarker(
+                [40.73555, -73.95284],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_a7c94cb7f26e4be8d10214455df8dc32.bindTooltip(
+                `<div>
+                     McGuinness Blvd & Eagle St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b6b6c87f2aaab772ee5fbb3e18dbac1e = L.circleMarker(
+                [40.71427487056234, -73.98990024891857],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_b6b6c87f2aaab772ee5fbb3e18dbac1e.bindTooltip(
+                `<div>
+                     Canal St & Rutgers St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f7bb145c3cca3520627b00557fd64093 = L.circleMarker(
+                [40.7734066104155, -73.97782540906373],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_f7bb145c3cca3520627b00557fd64093.bindTooltip(
+                `<div>
+                     Central Park West & W 68 St
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3ae7363bff95dec41632bfa3e8aba646 = L.circleMarker(
+                [40.739355417925516, -73.99931783083967],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "black", "fillOpacity": 0.7, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3, "stroke": true, "weight": 3}
+            ).addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+    
+            circle_marker_3ae7363bff95dec41632bfa3e8aba646.bindTooltip(
+                `<div>
+                     W 15 St & 7 Ave
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            tile_layer_1482442c72c84b3cfc688578c22013e4.addTo(map_2f93411b27138e202b17f9a497b3ecc9);
+        
+</script>
+</html>
