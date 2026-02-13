@@ -436,7 +436,6 @@ elif page == "Top 50 Routes Member Casual riders":
 
 else:
 
-
 # Load the image
     bikes = Image.open("New York_bike_image.jpeg")  
 
@@ -495,6 +494,6 @@ else:
 
 """)
 
-with col2:
+    with col2:
 #    st.image(bikes, use_column_width=True)
-     st.image(bikes, width=400)  # Adjust width to fit the column
+         st.image(bikes, width=400)  # Adjust width to fit the column
