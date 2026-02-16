@@ -27,7 +27,7 @@ page = st.sidebar.selectbox('Select an aspect of the analysis',
    "Trip Duration(mins) Vs User Type", "Ride Frequency Vs Hour of the Day Vs Day of the week",
    "Bike Type usage by membership type",
     "Top 50 Routes Member Casual riders", "Conclusions and recommendations"])
-########################## Import data ###########################################################################################
+########################## Import data        ##################################################################
 
 #df_1 = pd.read_csv('New York_trip_reduced_data_to_plot_7.csv')
 top_20 = pd.read_csv("New York_Weather_trip_data_Updated_top20.csv")
@@ -370,6 +370,14 @@ elif page == "Ride Frequency Vs Hour of the Day Vs Day of the week":
         template="plotly_white",
         title_text="Ride Analysis Dashboard"
     )
+
+    # --- X-axis labels ---
+    fig.update_xaxes(title_text="Hour of Day", row=1, col=1)
+    fig.update_xaxes(title_text="Day of Week", row=1, col=2)
+
+# --- Y-axis labels ---
+    fig.update_yaxes(title_text="Total Rides", row=1, col=1)
+    fig.update_yaxes(title_text="Total Rides", row=1, col=2)
 
     st.plotly_chart(fig, use_container_width=True)
     st.markdown("The left plot shows how the rides are distributed across the day and the right plot shows how its distributed acroos a week. “The dashboard shows that bike rides are concentrated during certain hours and days, likely corresponding to commuting patterns. Operations can be optimized by reallocating bikes during peak times, expanding capacity at busy stations, and promoting off-peak usage to balance demand")
