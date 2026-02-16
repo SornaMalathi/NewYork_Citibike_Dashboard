@@ -14,7 +14,6 @@ import numerize
 
 ########################### Initial settings for the dashboard ####################################################
 
-
 st.set_page_config(page_title = 'City Bike - New york Facitlity - Strategy Dashboard', layout='wide')
 st.title('City Bike - New york Facility - Strategy Dashboard')
 
@@ -29,7 +28,6 @@ page = st.sidebar.selectbox('Select an aspect of the analysis',
     "Top 50 Routes Member Casual riders", "Conclusions and recommendations"])
 ########################## Import data        ##################################################################
 
-#df_1 = pd.read_csv('New York_trip_reduced_data_to_plot_7.csv')
 top_20 = pd.read_csv("New York_Weather_trip_data_Updated_top20.csv")
 least_20 = pd.read_csv("New York_Weather_trip_data_Updated_least20.csv")
 df_avgtemp = pd.read_csv("New York_Weather_trip_data_Updated_AvgTemp.csv")
@@ -45,7 +43,9 @@ rides_per_day_df = pd.read_csv("NewYork_Weather_trip_data_rides_per_day.csv")
 if page == "Intro page":
     st.markdown("#### This dashboard aims to help the business strategy department assess the current logistics model of bike distribution across the city and identify expansion opportunities.")
     st.markdown(" Since the Covid–19 pandemic, New York residents have found even more merit in bike sharing, creating higher demand. This has led to distribution problems—such as fewer bikes at popular bike stations or stations full of docked bikes, making it difficult to return a hired bike—and customer complaints.")
-    st.markdown("This Analysis is done to diagnose where distribution issues stem from and advise higher management on a solution based on your diagnosis of the root of the problem—whether it’s sheer numbers, seasonal demand, or something else.The dashboard is separated into 5 sections:")
+    st.markdown(" For this project, we have used the open source data from the Citi Bike database for the year 2022. To enrich this data set, we have gathered weather data using NOAA’s API service.")
+    st.markdown("The objective of this analysis is to conduct a descriptive analysis of existing data and discover actionable insights for the business strategy team to help make informed decisions that will circumvent availability issues and ensure the company’s position as a leader in eco-friendly transportation solutions in the city.")
+    st.markdown("The dashboard is separated into 9 sections:")
     st.markdown("- Top 20 most popular stations")
     st.markdown("- Top 20 Least popular stations")
     st.markdown("- Weather component and bike usage")
