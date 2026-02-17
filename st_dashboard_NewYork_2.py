@@ -67,7 +67,6 @@ if page == "Intro page":
             st.markdown(" - Bike Type Usage")
             st.markdown(" - Conclusions and Recommendations")
             st.markdown("The dropdown menu on the left 'Aspect Selector' will take you to the different aspects of the analysis our team looked at.")
-
     
         with col2:
              st.image(bikes1, width=400)  # Adjust width to fit the column
