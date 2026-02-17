@@ -46,24 +46,31 @@ rides_per_day_df = pd.read_csv("NewYork_Weather_trip_data_rides_per_day.csv")
 ######################### Intro page     #########################################################################
 
 if page == "Intro page":
-    st.markdown("#### This dashboard aims to help the business strategy department assess the current logistics model of bike distribution across the city and identify expansion opportunities.")
-    st.markdown(" Since the Covid–19 pandemic, New York residents have found even more merit in bike sharing, creating higher demand. This has led to distribution problems—such as fewer bikes at popular bike stations or stations full of docked bikes, making it difficult to return a hired bike—and customer complaints.")
-    st.markdown(" For this project, we have used the open source data from the Citi Bike database for the year 2022. To enrich this data set, we have gathered weather data using NOAA’s API service.")
-    st.markdown("The objective of this analysis is to conduct a descriptive analysis of existing data and discover actionable insights for the business strategy team to help make informed decisions that will circumvent availability issues and ensure the company’s position as a leader in eco-friendly transportation solutions in the city.")
-    st.markdown("The dashboard is separated into 6 sections:")
-    st.markdown(" - Station Popularity Analysis")
-    st.markdown(" - Weather impact on Bike usage")
-    st.markdown(" - Time Based Usage patterns")
-    st.markdown(" - Trip Duration Vs User Behaviour")
-    st.markdown(" - Route Analysis")
-    st.markdown(" - Bike Type Usage")
-    st.markdown(" - Conclusions and Recommendations")
-    st.markdown("The dropdown menu on the left 'Aspect Selector' will take you to the different aspects of the analysis our team looked at.")
+    
+# Load the image
+        bikes1 = Image.open('City Bike_New York.jpeg')   #source: https://citibikenyc.com/community-programs/reducedfare
 
-    myImage = Image.open('City Bike_New York.jpeg') 
-    #source: https://citibikenyc.com/community-programs/reducedfare
-    st.image(myImage)
+# Create two columns: text on left, image on right
+        col1, col2 = st.columns([2, 1])  # 2:1 ratio for more space for text
 
+        with col1:
+            st.markdown("#### This dashboard aims to help the business strategy department assess the current logistics model of bike distribution across the city and identify expansion opportunities.")
+            st.markdown(" Since the Covid–19 pandemic, New York residents have found even more merit in bike sharing, creating higher demand. This has led to distribution problems—such as fewer bikes at popular bike stations or stations full of docked bikes, making it difficult to return a hired bike—and customer complaints.")
+            st.markdown(" For this project, we have used the open source data from the Citi Bike database for the year 2022. To enrich this data set, we have gathered weather data using NOAA’s API service.")
+            st.markdown("The objective of this analysis is to conduct a descriptive analysis of existing data and discover actionable insights for the business strategy team to help make informed decisions that will circumvent availability issues and ensure the company’s position as a leader in eco-friendly transportation solutions in the city.")
+            st.markdown("The dashboard is separated into 6 sections:")
+            st.markdown(" - Station Popularity Analysis")
+            st.markdown(" - Weather impact on Bike usage")
+            st.markdown(" - Time Based Usage patterns")
+            st.markdown(" - Trip Duration Vs User Behaviour")
+            st.markdown(" - Route Analysis")
+            st.markdown(" - Bike Type Usage")
+            st.markdown(" - Conclusions and Recommendations")
+            st.markdown("The dropdown menu on the left 'Aspect Selector' will take you to the different aspects of the analysis our team looked at.")
+
+    
+        with col2:
+             st.image(bikes1, width=400)  # Adjust width to fit the column
 
 ########################### Dual axis line chart page for Weather component & Bike usage #######################
     
