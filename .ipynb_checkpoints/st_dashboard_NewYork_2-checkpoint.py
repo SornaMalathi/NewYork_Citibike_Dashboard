@@ -325,8 +325,7 @@ elif page == "Bike Type usage by membership type":
 # Define custom colors for each rideable type
     rideable_colors = {
         'classic_bike': 'royalblue',
-        'electric_bike': 'orange',
-        'docked_bike': 'green'
+        'electric_bike': 'orange'
 }
 
 # Create Plotly bar chart with custom colors
@@ -346,7 +345,7 @@ elif page == "Bike Type usage by membership type":
     )
     st.plotly_chart(fig, use_container_width=True)
 
-    st.markdown("The chart shows the distribution of ride types across membership types. The x-axis represents the membership type (Member vs Casual), while the grouped bars show the number of rides for each rideable type (classic_bike, electric_bike. Classic bikes are the most popular across all users, with members taking significantly more rides than casuals. Fleet management should prioritize classic bikes for members while promoting electric bikes to casual riders to balance usage and improve overall service efficiency.")
+    st.markdown("The chart shows the distribution of ride types across membership types. The x-axis represents the membership type (Member vs Casual), while the grouped bars show the number of rides for each rideable type (classic_bike, electric_bike). Classic bikes are the most popular across all users, with members taking significantly more rides than casuals. Fleet management should prioritize classic bikes for members while promoting electric bikes to casual riders to balance usage and improve overall service efficiency.")
 
 
 ##############################   Top 50 Routes Member/Casual riders ###################################################
@@ -460,6 +459,10 @@ else:
 - Peak usage occurs during **weekday commute hours**, while weekends have lower ridership.
 - **Members dominate weekday usage**; casual riders are more active on weekends.
 
+#### Weather Impact
+- Bike ridership demonstrates clear seasonal patterns and appears positively correlated with temperature. 
+- Demand peaks during warmer seasons and declines in colder months, indicating strong weather sensitivity.
+
 #### Ride Duration (Boxplots)
 - Members tend to take **short, consistent trips**, while casual users show **more variability and longer trips**.
 - **Median trip duration** for members is lower than casual riders.
@@ -476,22 +479,18 @@ else:
     st.header("Recommendations")
     st.markdown("""
 #### Operation Planning 
-- Bike ridership demonstrates clear seasonal patterns and appears positively correlated with temperature. 
-- Demand peaks during warmer seasons and declines in colder months, indicating strong weather sensitivity. Therefore increase availability in warm month. 
+- Increase availability of the bikes in warm months. 
 - Consider offering discounted winter membership, reducing cold-weather incentives, offering seasonal passes etc.
 - High-demand stations may run out of bikes quickly. Plan frequent rebalancing from lower-demand stations.
 - For top stations, consider adding more docks or bikes to meet demand.
 - Work with local communities to understand why usage is low and promote cycling in those neighborhoods. If stations consistently underperform, consider merging them with nearby stations to optimize coverage.
 - Members mostly take short, regular trips, typical for commuting, while casual users take longer, more variable trips, likely for leisure. Operations, promotions, and bike allocation should reflect these usage patterns.
 
-
 #### Fleet & Station Management
 - Ensure **sufficient classic bikes** at high-demand stations.
 - Maintain **electric bikes** for casual users, particularly in tourist or recreational areas.
 - **Expand dock capacity** along high-traffic routes.
 - Encourage casual riders to try electric bikes through promotions or discounts, helping balance bike usage.
-- If classic bikes dominate usage, consider expanding classic bike inventory or stations where demand is high.
-- Electric bikes could be increased in number at recreational or tourist-heavy areas to attract casual users.
 
 #### Maintenance
 - Prioritize **maintenance on high-use bikes and routes**.
