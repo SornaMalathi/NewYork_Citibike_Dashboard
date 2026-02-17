@@ -363,7 +363,7 @@ elif page == "Top 50 Routes Member Casual riders":
         html_data = f.read()
 
     ## Show in webpage
-    st.header("Aggregated Bike Trips in New York")
+    st.header("Top 50 popular Bike Trip routes in New York")
     st.components.v1.html(html_data,height=1000)
     st.markdown("The name of the stations can be seen by hovering over the map. The Map shows the top 50 frequent routes in New York, identified by the membership type. Most of the popular routes are done by members. The top 5 routes are bewteen 'W 21 St & 6 Ave-9 Ave & W 22 St, 1 Ave & E 62 St-1 Ave & E 68 St, Norfolk St & Broome St-Henry St & Grand St, North Moore St & Greenwich St-Vesey St & Church St, Henry St & Grand St-Norfolk St & Broome St. Operations should focus on ensuring availability, maintaining bikes, and considering promotions to encourage casual rider adoption on these popular routes")
 
