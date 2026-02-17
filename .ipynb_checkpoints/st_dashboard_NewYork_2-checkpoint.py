@@ -20,13 +20,17 @@ st.title('City Bike - New york Facility - Strategy Dashboard')
 # Define side bar
 st.sidebar.title("Aspect Selector")
 page = st.sidebar.selectbox('Select an aspect of the analysis',
-  ["Intro page","Top 20 most popular stations", "Least 20 popular stations",
+  ["Intro page","Top 20 most popular stations", 
+   "Least 20 popular stations",
    "Table with Top & Least popular stations",
-   "Weather component and bike usage", "Peak Hour of the day Vs Membership Type", 
-   "Trip Duration(mins) Vs User Type", "Ride Frequency Vs Hour of the Day Vs Day of the week",
+   "Weather component and bike usage", 
+   "Trip Duration(mins) Vs User Type", 
+   "Ride Frequency Vs Hour of the Day Vs Day of the week",
    "Bike Type usage by membership type",
-    "Top 50 Routes Member Casual riders", "Conclusions and recommendations"])
-########################## Import data        ##################################################################
+   "Top 50 Routes Member Casual riders", 
+   "Conclusions and recommendations"])
+
+########################## Import data        ###################################################################
 
 top_20 = pd.read_csv("New York_Weather_trip_data_Updated_top20.csv")
 least_20 = pd.read_csv("New York_Weather_trip_data_Updated_least20.csv")
@@ -36,25 +40,24 @@ df_peakhour = pd.read_csv("New York_Weather_trip_data_membership_type_ride_count
 df_boxplot = pd.read_csv("NewYork_Weather_trip_data_boxplot_stats.csv")
 rides_per_hour_df = pd.read_csv("NewYork_Weather_trip_data_rides_per_hour.csv")
 rides_per_day_df = pd.read_csv("NewYork_Weather_trip_data_rides_per_day.csv")
-######################################### DEFINE THE PAGES #####################################################################
 
-### Intro page
+######################################### DEFINE THE PAGES #######################################################
+
+######################### Intro page     #########################################################################
 
 if page == "Intro page":
     st.markdown("#### This dashboard aims to help the business strategy department assess the current logistics model of bike distribution across the city and identify expansion opportunities.")
     st.markdown(" Since the Covid–19 pandemic, New York residents have found even more merit in bike sharing, creating higher demand. This has led to distribution problems—such as fewer bikes at popular bike stations or stations full of docked bikes, making it difficult to return a hired bike—and customer complaints.")
     st.markdown(" For this project, we have used the open source data from the Citi Bike database for the year 2022. To enrich this data set, we have gathered weather data using NOAA’s API service.")
     st.markdown("The objective of this analysis is to conduct a descriptive analysis of existing data and discover actionable insights for the business strategy team to help make informed decisions that will circumvent availability issues and ensure the company’s position as a leader in eco-friendly transportation solutions in the city.")
-    st.markdown("The dashboard is separated into 9 sections:")
-    st.markdown("- Top 20 most popular stations")
-    st.markdown("- Top 20 Least popular stations")
-    st.markdown("- Weather component and bike usage")
-    st.markdown("- Peak Hours of a Day Vs Membership type")
-    st.markdown("- Trip Duration Vs User Type")
-    st.markdown("- No. of Rides Vs Hour of the day Vs Day of the week")
-    st.markdown("- Interactive map with aggregated bike trips")
-    st.markdown("- Ride type usage by membership types")
-    st.markdown("- Recommendations")
+    st.markdown("The dashboard is separated into 6 sections:")
+    st.markdown(" - Station Popularity Analysis")
+    st.markdown(" - Weather impact on Bike usage")
+    st.markdown(" - Time Based Usage patterns")
+    st.markdown(" - Trip Duration Vs User Behaviour")
+    st.markdown(" - Route Analysis")
+    st.markdown(" - Bike Type Usage")
+    st.markdown(" - Conclusions and Recommendations")
     st.markdown("The dropdown menu on the left 'Aspect Selector' will take you to the different aspects of the analysis our team looked at.")
 
     myImage = Image.open('City Bike_New York.jpeg') 
@@ -163,7 +166,7 @@ elif page == "Top 20 most popular stations":
     )
 
     st.plotly_chart(fig, use_container_width=True)
-    st.markdown("From the bar chart it is clear that there are some stations that are more popular than others(high usage station) - in the top 3 we can see w 21 st & 6 ave, west st & chambers st, broadway & w 58 st. There is a big jump between the highest and lowest bars of the plot, indicating some clear preferences for the leading stations.")
+    st.markdown("From the bar chart it is clear that there are some stations that are more popular than others(high usage station) - in the top 3 we can see w 21 st & 6 ave, west st & chambers st, broadway & w 58 st. There is a big jump between the highest and lowest bars of the plot.")
 
 
 elif page == "Least 20 popular stations":
@@ -198,7 +201,7 @@ elif page == "Least 20 popular stations":
 
     st.plotly_chart(fig, use_container_width=True)
 
-    st.markdown("From the bar chart it is clear that there are some stations that are less popular than others - the last 3 we can see lafayette park, marin light rail, van vorst park. There is a big jump between the most and least popular stations, indicating some clear preferences for the leading stations. The Bike Sharing company can think abt increasing the bike usage in these stations or based on the count just remove the stations to save some logistic cost")
+    st.markdown("From the bar chart it is clear that there are some stations that are less popular than others - the last 3 we can see lafayette park, marin light rail, van vorst park. There is a big jump between the most and least popular stations ride frequency values, indicating some clear preferences for the leading stations. The stakeholders can think abt increasing the bike usage in these stations or based on the count just remove the stations to save some logistic cost")
 
 ########################   Table with top and least popular stations #############################################
 
@@ -222,35 +225,6 @@ elif page == 'Table with Top & Least popular stations':
 # import streamlit as st
     st.dataframe(stations_summary)
 
-######################## Peak Hour of the day Vs Membership Type #################################################
-
-elif page == "Peak Hour of the day Vs Membership Type":
-
-    # Create an empty figure
-    fig = go.Figure()
-
-    # Add one line per membership type
-    for member_type in df_peakhour['member_casual'].unique():
-        subset = df_peakhour[df_peakhour['member_casual'] == member_type]
-        fig.add_trace(go.Scatter(
-            x=subset['ride_hour'],
-            y=subset['total_rides'],
-            mode='lines+markers',  # lines with markers
-            name=member_type
-        ))
-
-    # Update layout
-    fig.update_layout(
-        title='Peak Riding Hours by Membership Type',
-        xaxis_title='Hour of Day (0–23)',
-        yaxis_title='Number of Rides',
-        xaxis=dict(tickmode='linear', tick0=0, dtick=1),  # ticks 0–23
-        template='plotly_white'
-    )
-
-    st.plotly_chart(fig, use_container_width=True)
-
-    st.markdown("The line chart illustrates the distribution of bike rides across different hours of the day for members and casual users. Clear morning peak from 7-9AM and evening peak 4-6PM and lower activity overnight.Members show strong commuting patterns, with pronounced peaks during typical work commute hours.Casual riders tend to ride more during leisure hours rather than commuting hours.")
 
 #####################  Trip Duration(mins) Vs User Type ################################################################
 
@@ -334,55 +308,7 @@ elif page == "Trip Duration(mins) Vs User Type":
 
     st.markdown("The boxplot compares trip duration (in minutes) between member and casual riders. Casual riders tend to take longer trips compared to members.Casual trips vary more (short leisure rides + long sightseeing trips) Members are more consistent. The analysis reveals clear behavioral differences between members and casual riders. Casual users generally take longer and more variable trips, suggesting recreational or leisure usage. In contrast, members exhibit shorter and more consistent trip durations, consistent with commuting behavior. The presence of extreme long-duration outliers, particularly among casual users, further supports the interpretation of leisure-driven usage patterns.")
 
-##########################  Ride Frequency Vs Hour of the Day Vs Day of the week ########################################
-
-elif page == "Ride Frequency Vs Hour of the Day Vs Day of the week":
-
-
-    fig = make_subplots(rows=1, cols=2,
-                        subplot_titles=("Ride Frequency by Hour",
-                                        "Ride Frequency by Day"))
-
-# --- Rides by Hour ---
-    fig.add_trace(
-        go.Bar(
-            x=rides_per_hour_df['ride_hour'],
-            y=rides_per_hour_df['total_rides'],
-            name="Hour"
-        ),
-        row=1, col=1
-    )
-
-# --- Rides by Day ---
-    fig.add_trace(
-        go.Bar(
-            x=rides_per_day_df['day_of_week'],
-            y=rides_per_day_df['total_rides'],
-            name="Day"
-        ),
-        row=1, col=2
-    )
-
-    fig.update_layout(
-        height=500,
-        width=1000,
-        showlegend=False,
-        template="plotly_white",
-        title_text="Ride Analysis Dashboard"
-    )
-
-    # --- X-axis labels ---
-    fig.update_xaxes(title_text="Hour of Day", row=1, col=1)
-    fig.update_xaxes(title_text="Day of Week", row=1, col=2)
-
-# --- Y-axis labels ---
-    fig.update_yaxes(title_text="Total Rides", row=1, col=1)
-    fig.update_yaxes(title_text="Total Rides", row=1, col=2)
-
-    st.plotly_chart(fig, use_container_width=True)
-    st.markdown("The left plot shows how the rides are distributed across the day and the right plot shows how its distributed acroos a week. “The dashboard shows that bike rides are concentrated during certain hours and days, likely corresponding to commuting patterns. Operations can be optimized by reallocating bikes during peak times, expanding capacity at busy stations, and promoting off-peak usage to balance demand")
-
-##################################  Bike Type usage by membership type ####################################################
+##################################  Bike Type usage by membership type ############################################
 
 elif page == "Bike Type usage by membership type":
 
@@ -441,6 +367,82 @@ elif page == "Top 50 Routes Member Casual riders":
     st.header("Aggregated Bike Trips in New York")
     st.components.v1.html(html_data,height=1000)
     st.markdown("The name of the stations can be seen by hovering over the map. The Map shows the top 50 frequent routes in New York, identified by the membership type. Most of the popular routes are done by members. The top 5 routes are bewteen 'W 21 St & 6 Ave-9 Ave & W 22 St, 1 Ave & E 62 St-1 Ave & E 68 St, Norfolk St & Broome St-Henry St & Grand St, North Moore St & Greenwich St-Vesey St & Church St, Henry St & Grand St-Norfolk St & Broome St. Operations should focus on ensuring availability, maintaining bikes, and considering promotions to encourage casual rider adoption on these popular routes")
+
+##########################  Ride Frequency Vs Hour of the Day Vs Day of the week ###############################
+
+elif page == "Ride Frequency Vs Hour of the Day Vs Day of the week":
+    # Ensure correct day order
+    day_order = ["Monday", "Tuesday", "Wednesday", 
+                 "Thursday", "Friday", "Saturday", "Sunday"]
+
+    rides_per_day_df['day_of_week'] = pd.Categorical(
+        rides_per_day_df['day_of_week'],
+        categories=day_order,
+        ordered=True
+    )
+    
+    rides_per_day_df = rides_per_day_df.sort_values('day_of_week')
+
+    fig = make_subplots(
+        rows=1, cols=2,
+        subplot_titles=("Ride Frequency by Hour (with Membership)",
+                        "Ride Frequency by Day"),
+        specs=[[{"secondary_y": True}, {}]]
+    )
+
+    fig.add_trace(
+        go.Bar(
+            x=rides_per_hour_df['ride_hour'],
+            y=rides_per_hour_df['total_rides'],
+            name="Total Rides",
+            marker_color="steelblue"   # BLUE bars
+        ),
+        row=1, col=1,
+        secondary_y=False
+    )
+    
+    for member_type in df_peakhour['member_casual'].unique():
+        subset = df_peakhour[df_peakhour['member_casual'] == member_type]
+        
+        fig.add_trace(
+            go.Scatter(
+                x=subset['ride_hour'],
+                y=subset['total_rides'],
+                mode='lines+markers',
+                name=member_type
+            ),
+            row=1, col=1,
+            secondary_y=True
+        )
+    
+    fig.update_xaxes(title_text="Hour of Day", row=1, col=1)
+    fig.update_yaxes(title_text="Total Rides (All Users)", row=1, col=1, secondary_y=False)
+    fig.update_yaxes(title_text="Rides by Membership Type", row=1, col=1, secondary_y=True)
+
+    fig.add_trace(
+        go.Bar(
+            x=rides_per_day_df['day_of_week'],
+            y=rides_per_day_df['total_rides'],
+            name="Daily Total",
+            marker_color="steelblue"
+        ),
+        row=1, col=2
+    )
+    
+    fig.update_xaxes(title_text="Day of Week", row=1, col=2)
+    fig.update_yaxes(title_text="Total Rides", row=1, col=2)
+    
+    fig.update_layout(
+        height=500,
+        width=1100,
+        template="plotly_white",
+        title_text="Ride Frequency Analysis Dashboard"
+    )
+    
+    st.plotly_chart(fig, use_container_width=True)
+    st.markdown("The left plot shows how the rides are distributed across the day, along with the ride behaviour of members and casual riders and the right plot shows how its distributed across a week. The dashboard shows that bike rides are concentrated during certain hours and days, likely corresponding to commuting patterns. The line chart illustrates the distribution of bike rides across different hours of the day for members and casual users. Clear morning peak from 7-9AM and evening peak 4-6PM and lower activity overnight.Members show strong commuting patterns, with pronounced peaks during typical work commute hours.Casual riders tend to ride more during leisure hours rather than commuting hours. Operations can be optimized by reallocating bikes during peak times, expanding capacity at busy stations, and promoting off-peak usage to balance demand")
+
+###################################################################################################################
 
 else:
 
@@ -505,3 +507,5 @@ else:
     with col2:
 #    st.image(bikes, use_column_width=True)
          st.image(bikes, width=400)  # Adjust width to fit the column
+
+##############################################################################################################
