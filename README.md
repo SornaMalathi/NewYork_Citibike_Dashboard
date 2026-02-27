@@ -1,6 +1,5 @@
 # New York Citibike Analysis Dashboard #
-Analysing the New York Citi bike data from the year 2022. 
-
+Analysing the New York Citi bike data from the year 2022.<br/> 
 
 **Objective**
 
@@ -8,7 +7,7 @@ The objective of this project is to conduct a comprehensive descriptive analysis
 The goal is to identify patterns in user behavior, seasonal demand, and geographic distribution to diagnose bike availability issues across the city.
 
 This project aims to generate actionable insights that support strategic decision-making for improving bike redistribution logistics, 
-minimizing availability shortages, and maintaining Citi Bike’s leadership in sustainable urban transportation.
+minimizing availability shortages, and maintaining Citi Bike’s leadership in sustainable urban transportation.<br/>
 
 
 **Motivation**
@@ -26,7 +25,7 @@ Understanding the root causes of these distribution problems — whether seasona
 insufficient fleet size—is essential for optimizing logistics and identifying expansion opportunities.
 
 This project is motivated by the need to bridge data analytics and business strategy, translating complex data insights into clear, visual, 
-and actionable recommendations for non-technical stakeholders.
+and actionable recommendations for non-technical stakeholders.<br/>
 
 
 **Scope**
